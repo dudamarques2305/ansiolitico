@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Autoavaliações{% endblock %}
+{% block content %}
+<h2>Respostas Anônimas</h2>
+<div class="list-container">
+    {% for autoavaliacao in autoavaliacoes %}
+    <div class="card p-3">
+        <p>Idade: {{ autoavaliacao.idade }}</p>
+        <p>Gênero: {{ autoavaliacao.genero }}</p>
+        <p>Pontuação: {{ autoavaliacao.pontuacao }}</p>
+        <a href="{% url 'autoavaliacao_edit' autoavaliacao.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'autoavaliacao_delete' autoavaliacao.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

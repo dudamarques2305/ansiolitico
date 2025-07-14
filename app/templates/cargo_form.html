@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ acao }} Cargo{% endblock %}
+{% block content %}
+<h2>{{ acao }} Cargo</h2>
+<div class="card p-4">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-modern">{{ acao }}</button>
+    </form>
+</div>
+{% endblock %}

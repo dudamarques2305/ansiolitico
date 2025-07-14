@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Sintomas</title>
+</head>
+<body>
+    <h1>Sintomas cadastrados</h1>
+    <a href="{% url 'sintoma_create' %}">Cadastrar novo sintoma</a>
+    <ul>
+      {% for s in sintomas %}
+        <li>
+            {{ s.descricao }} - Intensidade: {{ s.intensidade }} - Frequência: {{ s.frequencia }}
+            | <a href="{% url 'sintoma_edit' s.pk %}">Editar</a>
+            | <a href="{% url 'sintoma_delete' s.pk %}">Excluir</a>
+        </li>
+      {% empty %}
+        <li>Nenhum sintoma cadastrado.</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Voltar</a>
+</body>
+</html>

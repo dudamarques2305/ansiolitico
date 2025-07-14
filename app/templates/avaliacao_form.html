@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ acao }} Avaliação{% endblock %}
+{% block content %}
+<h2>{{ acao }} Avaliação de Ansiedade</h2>
+<div class="card p-4">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-modern" type="submit">{{ acao }}</button>
+    </form>
+</div>
+{% endblock %}

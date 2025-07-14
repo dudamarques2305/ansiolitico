@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Autoavaliação{% endblock %}
+{% block content %}
+<h4>Deseja excluir esta autoavaliação?</h4>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Confirmar</button>
+    <a href="{% url 'lista_autoavaliacoes' %}" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}

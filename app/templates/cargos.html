@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Cargos{% endblock %}
+{% block content %}
+<h2>Lista de Cargos</h2>
+<div class="list-container">
+    {% for cargo in cargos %}
+    <div class="card p-3">
+        <h5>{{ cargo.nome }}</h5>
+        <p>Especialidade: {{ cargo.especialidade }}</p>
+        <p>Contato: {{ cargo.contato }}</p>
+        <a href="{% url 'cargo_edit' cargo.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'cargo_delete' cargo.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% empty %}
+    <p>Nenhum cargo cadastrado.</p>
+    {% endfor %}
+</div>
+{% endblock %}

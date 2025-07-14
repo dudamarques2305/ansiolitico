@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Instituições{% endblock %}
+{% block content %}
+<h2>Lista de Instituições de Apoio</h2>
+<div class="list-container">
+    {% for instituicao in instituicoes %}
+    <div class="card p-3">
+        <h5>{{ instituicao.nome }}</h5>
+        <p>Tipo: {{ instituicao.tipo }}</p>
+        <p>Contato: {{ instituicao.contato }}</p>
+        <p><a href="{{ instituicao.site }}" target="_blank">Site</a></p>
+        <a href="{% url 'instituicao_edit' instituicao.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'instituicao_delete' instituicao.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

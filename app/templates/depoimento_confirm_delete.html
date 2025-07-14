@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Depoimento{% endblock %}
+{% block content %}
+<h4>Tem certeza que deseja excluir este depoimento?</h4>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a href="{% url 'lista_depoimentos' %}" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}

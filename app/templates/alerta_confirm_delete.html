@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Alerta{% endblock %}
+{% block content %}
+<h4>Excluir alerta de tipo <strong>{{ alerta.tipo }}</strong>?</h4>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Excluir</button>
+    <a href="{% url 'lista_alertas' %}" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Depoimentos{% endblock %}
+{% block content %}
+<h2>Depoimentos Compartilhados</h2>
+<div class="list-container">
+    {% for depoimento in depoimentos %}
+    <div class="card p-3">
+        <p><em>{{ depoimento.texto }}</em></p>
+        <p class="text-muted">{{ depoimento.data|date:"d/m/Y H:i" }}</p>
+        <a href="{% url 'depoimento_edit' depoimento.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'depoimento_delete' depoimento.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

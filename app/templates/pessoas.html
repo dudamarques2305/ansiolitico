@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Pessoas{% endblock %}
+{% block content %}
+<h2>Lista de Pessoas</h2>
+<div class="list-container">
+    {% for pessoa in pessoas %}
+    <div class="card p-3">
+        <h5>{{ pessoa.nome }}</h5>
+        <p>Email: {{ pessoa.email }}</p>
+        <a href="{% url 'pessoa_edit' pessoa.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'pessoa_delete' pessoa.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

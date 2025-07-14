@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ acao }} Pessoa{% endblock %}
+{% block content %}
+<h2>{{ acao }} Pessoa + Usuário</h2>
+<div class="card p-4">
+    <form method="post">
+        {% csrf_token %}
+        <h5>Usuário</h5>
+        {{ u_form.as_p }}
+        <hr>
+        <h5>Dados Pessoais</h5>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-modern">{{ acao }}</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2 class="mb-4">Bem-vindo ao Ansiolítico</h2>
+<div class="row text-center">
+    <div class="col-md-3" style="margin-bottom: 20px;">
+        <div class="card p-3 bg-light">
+            <h5>Pessoas</h5>
+            <p>{{ num_pessoas }}</p>
+        </div>
+    </div>
+    <div class="col-md-3" style="margin-bottom: 20px;">
+        <div class="card p-3 bg-light">
+            <h5>Sintomas</h5>
+            <p>{{ num_sintomas }}</p>
+        </div>
+    </div>
+    <!-- Continue para os outros contadores -->
+</div>
+{% endblock %}

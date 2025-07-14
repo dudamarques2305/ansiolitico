@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ acao }} Sintoma</title>
+</head>
+<body>
+    <h1>{{ acao }} Sintoma</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_sintomas' %}">Cancelar</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Alertas{% endblock %}
+{% block content %}
+<h2>Mensagens Enviadas</h2>
+<div class="list-container">
+    {% for alerta in alertas %}
+    <div class="card p-3">
+        <p><strong>{{ alerta.tipo }}</strong></p>
+        <p>{{ alerta.mensagem }}</p>
+        <p>Data: {{ alerta.data_envio|date:"d/m/Y H:i" }}</p>
+        <a href="{% url 'alerta_edit' alerta.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'alerta_delete' alerta.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

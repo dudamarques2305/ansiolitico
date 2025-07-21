@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Ansiolítico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Cadastros</a></li>
+      <li><a href="#">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+      <li><a href="{% url 'logout' %}">Sair</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Ansiolítico</h1>
+    <p>Cuidando da mente com tecnologia e carinho 🌻</p>
+  </header>
+
+  <div class="dashboard">
+    <div class="card"><h3>Pessoas</h3></div>
+    <div class="card"><h3>Sintomas</h3></div>
+    <div class="card"><h3>Medicamentos</h3></div>
+    <div class="card"><h3>Cargos</h3></div>
+    <div class="card"><h3>Instituições</h3></div>
+    <div class="card"><h3>Artigos</h3></div>
+    <div class="card"><h3>Avaliações</h3></div>
+    <div class="card"><h3>Autoavaliações</h3></div>
+    <div class="card"><h3>Alertas</h3></div>
+    <div class="card"><h3>Depoimentos</h3></div>
+  </div>
+
+  <footer>
+    &copy; 2025 - Criado com afeto por Duda 🧡
+  </footer>
+</body>
+</html>

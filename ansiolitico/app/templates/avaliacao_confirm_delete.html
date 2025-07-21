@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Avaliação{% endblock %}
+{% block content %}
+<h4>Excluir avaliação do dia <strong>{{ avaliacao.data }}</strong>?</h4>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Excluir</button>
+    <a href="{% url 'lista_avaliacoes' %}" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}

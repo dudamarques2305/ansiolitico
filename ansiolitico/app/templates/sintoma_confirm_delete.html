@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Sintoma{% endblock %}
+{% block content %}
+<h3 class="mb-4">Deseja excluir o sintoma "{{ sintoma.descricao }}"?</h3>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'lista_sintomas' %}" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ansiolítico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Ansiolítico</h1>
+    <p>Equilíbrio, informação e acolhimento 💚</p>
+  </header>
+
+  <div class="dashboard">
+    <div class="card">
+      <h3>Pessoas</h3>
+      <p>{{ pessoas }}</p>
+    </div>
+    <div class="card">
+      <h3>Sintomas</h3>
+      <p>{{ sintomas }}</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 - Projeto Ansiolítico por Duda 🧠✨
+  </footer>
+</body>
+</html>

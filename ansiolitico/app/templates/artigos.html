@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Artigos{% endblock %}
+{% block content %}
+<h2>Lista de Artigos</h2>
+<div class="list-container">
+    {% for artigo in artigos %}
+    <div class="card p-3">
+        <h5>{{ artigo.titulo }}</h5>
+        <p>Fonte: {{ artigo.fonte }}</p>
+        <p>Data: {{ artigo.data }}</p>
+        <p><a href="{{ artigo.link }}" target="_blank">Acessar artigo</a></p>
+        <a href="{% url 'artigo_edit' artigo.pk %}" class="btn btn-outline-primary btn-sm">Editar</a>
+        <a href="{% url 'artigo_delete' artigo.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
